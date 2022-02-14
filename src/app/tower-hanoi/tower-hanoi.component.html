@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="hanoi">
+        <div *ngFor="let arr of array">
+            <div class="disk d{{arr}} t1 p{{arr}}"></div>
+        </div>
+        <div class="tower" onclick="clickTower(0)"></div>
+        <div class="tower" onclick="clickTower(1)"></div>
+        <div class="tower" onclick="clickTower(2)"></div>
+    </div>
+    <div class="inputBtn">
+        <form method="get" [formGroup]="nbDiskForm" (submit)="solve()">
+            <input type="number" class="form-control" name="nbDisk" #input placeholder="Number disk"
+                formControlName="nbDisk">
+            <button type="button" (click)="onKeyUp(input.value)">Generate</button>
+            <button type="button" (click)="onKeyUp(0)">Reset</button>
+            <button type="submit">Solve</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- <script src="../../assets/js/towerhanoi.js"></script> -->
